@@ -68,5 +68,13 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
-
-
+*/
+.contador{
+  display: flex;
+  justify-content:space-evenly;
+  margin-top: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 30px;
+  border: #1a1a1a 3px solid;
+  
+}
