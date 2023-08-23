@@ -7,7 +7,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Cart from './components/Cart'
 import ProductDetail from './components/ProductDetail'
-import ShoppingCartContext from './contex/ShoppingCartContext'
+import ShoppingCartProvider from './contex/ShoppingCartContext'
 import ComponenteA from './components/ComponenteA'
 import { useState, useEffect } from 'react'
 import Loading from './components/Loading'
@@ -26,7 +26,7 @@ if(loading){
   return (
 
     <BrowserRouter>
-      <ShoppingCartContext>
+      <ShoppingCartProvider>
         <NavBar />
         
         <Routes>
@@ -37,7 +37,7 @@ if(loading){
           <Route exact path='/item/:id' element={<ItemDetailConteiner />} />
           <Route exact path='/product/:id' element={<ProductDetail />} />
         </Routes>
-      </ShoppingCartContext>
+      </ShoppingCartProvider>
     </BrowserRouter>
 
 

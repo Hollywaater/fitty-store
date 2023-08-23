@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { CartContext } from '../contex/ShoppingCartContext'
-
-const ItemCount = () => {
+import ShoppingCartProvider from '../contex/ShoppingCartContext'
+// import { useState } from 'react'
+const ItemCount = (addItem) => {
 
   const [contador, setContador] = useState(0)
   const sumar = ()=>{
@@ -19,28 +20,11 @@ const ItemCount = () => {
     
   
   }
-  const reset = () =>{
-    setContador(0)
-  }
+  // const reset = () =>{
+  //   setContador(0)
+  // }
   //A chequear
-  const [cart, setCart]= useState(1)
-const addToCard =()=>{
-setCart((elmentSelect)=>{
-  console.log("entro")
-  const isItemFound = elmentSelect.find((item)=> item.id === id);
-  if(isItemFound){
-    return elmentSelect.map((item)=>{
-      if (item.id === id){
-        return{...item, cantidad: item.cantidad + count}
-      }else{
-        return item;
-      }
-    })
-  }else{
-    return[...elmentSelect,{id, cantidad:count, precio, nombre}]
-  }
-})
-}
+
 
 // const addToCart = () => {
 
@@ -83,7 +67,7 @@ setCart((elmentSelect)=>{
     <button onClick={resta}className='buttoncount'> - </button>
     
     </div>
-    <button className='buttonAgregar' onClick={addToCard}>Agregar al carrito</button>
+    <button className='buttonAgregar' onClick={addItem(contador)}>Agregar al carrito</button>
     
     </>
     
