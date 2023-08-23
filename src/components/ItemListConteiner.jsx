@@ -22,11 +22,11 @@ getDocs(misProductos).then( res =>{
 }).catch(error => console.log(error))
 },[category])
 //console.log(nuevoProduct)
-const filtradoProductos = product.filter((produ)=>produ.category === category)
+//const filtradoProductos = product.filter((produ)=>produ.category === category)
 
   return (
     <>
-     {category ? <ItemList productos={filtradoProductos}/> : <ItemList productos={product}/>}
+    <ItemList productos={product}/>
       {/* <ItemList productos={filtradoProductos} />  */}
       {/* <h1>producto :{product.name} </h1> */}
     {/* <ItemList productos={product} />  */}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Image, Stack, Heading, Text, CardBody, Divider, Card } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({ id, nombre, precio, }) => {
+const ItemDetail = ({ id, nombre, precio, descripcion }) => {
   return (
     <Card maxW='sm'>
       <CardBody>
@@ -10,12 +10,10 @@ const ItemDetail = ({ id, nombre, precio, }) => {
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nombre} </Heading>
           <Text>
-            This sofa is perfect for modern tropical spaces, baroque inspired
-            spaces, earthy toned spaces and for people who love a chic design with a
-            sprinkle of vintage design.
+            {descripcion}
           </Text>
           <Text color='blue.600' fontSize='2xl'>
-            {precio}
+            ${precio}
           </Text>
         </Stack>
       </CardBody>
