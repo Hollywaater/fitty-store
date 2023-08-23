@@ -4,7 +4,7 @@ import {Image,Stack,Heading,Text,CardBody,Divider,CardFooter,ButtonGroup,Button,
 import ItemCount from './ItemCount'
 const ItemDetail = ({productos}) => {
   const {id} = useParams()
-  const filtradoProductos= productos.filter((produ)=> produ.id==id)
+  //const filtradoProductos= productos.filter((produ)=> produ.id==id)
     console.log(productos)
   return (
     
@@ -28,9 +28,7 @@ const ItemDetail = ({productos}) => {
     </Stack>
   </CardBody>
   <Divider />
-  <CardFooter>
     <ItemCount/>
-  </CardFooter>
 </Card>
 
 
@@ -49,7 +47,7 @@ const ItemDetail = ({productos}) => {
   )
 }
 
-export default ItemDetail
+export default  React.memo(ItemDetail)
 
 /**
  filtradoProductos.map((producto)=>(

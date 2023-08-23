@@ -21,7 +21,7 @@ const NavBar = () => {
                 </MenuButton>
                 
                 <MenuList>
-                    <MenuItem> <Link to= {`/category/${"cat1"}`}>Productos para carroceria</Link></MenuItem>
+                    <MenuItem> <Link to= {`/category/${"carroceria"}`}>Productos para carroceria</Link></MenuItem>
                     <MenuItem><Link to= {`/category/${"cat2"}`}>Productos para interior</Link></MenuItem>
                     <MenuItem><Link to= {`/category/${"cat3"}`}>Productos para motor</Link></MenuItem>
                     <MenuItem><Link to= {`/category/${"cat4"}`}>Productos para tramientos</Link></MenuItem>
