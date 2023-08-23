@@ -22,9 +22,9 @@ const NavBar = () => {
                 
                 <MenuList>
                     <MenuItem> <Link to= {`/category/${"carroceria"}`}>Productos para carroceria</Link></MenuItem>
-                    <MenuItem><Link to= {`/category/${"cat2"}`}>Productos para interior</Link></MenuItem>
-                    <MenuItem><Link to= {`/category/${"cat3"}`}>Productos para motor</Link></MenuItem>
-                    <MenuItem><Link to= {`/category/${"cat4"}`}>Productos para tramientos</Link></MenuItem>
+                    <MenuItem><Link to= {`/category/${"interior"}`}>Productos para interior</Link></MenuItem>
+                    <MenuItem><Link to= {`/category/${"motor"}`}>Productos para motor</Link></MenuItem>
+                    {/* <MenuItem><Link to= {`/category/${"cat4"}`}>Productos para tramientos</Link></MenuItem> */}
                     
                 </MenuList>
             </Menu>
