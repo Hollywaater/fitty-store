@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { CartContext } from '../contex/ShoppingCartContext'
 import ShoppingCartProvider from '../contex/ShoppingCartContext'
 // import { useState } from 'react'
-const ItemCount = (addItem) => {
+const ItemCount = ({addItem}) => {
 
   const [contador, setContador] = useState(0)
   const sumar = ()=>{
@@ -67,7 +67,7 @@ const ItemCount = (addItem) => {
     <button onClick={resta}className='buttoncount'> - </button>
     
     </div>
-    <button className='buttonAgregar' onClick={addItem(contador)}>Agregar al carrito</button>
+    <button className='buttonAgregar' onClick={()=>addItem(contador)}>Agregar al carrito</button>
     
     </>
     

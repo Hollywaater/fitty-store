@@ -1,11 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { Image, Stack, Heading, Text, CardBody, Divider, Card } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
-import ShoppingCartProvider from '../contex/ShoppingCartContext'
+import { CartContext } from '../contex/ShoppingCartContext'
 
 const ItemDetail = ({ id, nombre, precio, descripcion }) => {
   const [cantidad, setCantidad]= useState(0)
-  const {addItem} = useContext(ShoppingCartProvider)
+  const {addItem} = useContext(CartContext)
   const manejadorCantidades = (cantidad)=>{
     setCantidad(cantidad);
     const item = {id,nombre,precio};
@@ -43,7 +43,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion }) => {
         </Stack>
       </CardBody>
       <Divider />
-      <ItemCount />
+      <ItemCount addItem={manejadorCantidades} />
     </Card>
   )
 }
