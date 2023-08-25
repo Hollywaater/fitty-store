@@ -3,7 +3,7 @@ import { Image, Stack, Heading, Text, CardBody, Divider, Card } from '@chakra-ui
 import ItemCount from './ItemCount'
 import { CartContext } from '../contex/ShoppingCartContext'
 
-const ItemDetail = ({ id, nombre, precio, descripcion }) => {
+const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
   const [cantidad, setCantidad]= useState(0)
   const {addItem} = useContext(CartContext)
   const manejadorCantidades = (cantidad)=>{
@@ -31,7 +31,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion }) => {
   return (
     <Card maxW='sm'>
       <CardBody>
-        <Image />
+        <Image src={imagen} />
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nombre} </Heading>
           <Text>

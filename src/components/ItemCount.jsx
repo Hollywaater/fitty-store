@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
 import { CartContext } from '../contex/ShoppingCartContext'
 import ShoppingCartProvider from '../contex/ShoppingCartContext'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 // import { useState } from 'react'
+
 const ItemCount = ({addItem}) => {
 
   const [contador, setContador] = useState(0)
@@ -57,7 +60,18 @@ const ItemCount = ({addItem}) => {
 //   });
 
 // };
-
+const mensajeAgregado = ()=>{
+  toast('👌 Agregaste productos a tu carrito!', {
+    position: "top-right",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "dark",
+    });
+}
   return (
     <>
     <div className="contador">
@@ -67,8 +81,8 @@ const ItemCount = ({addItem}) => {
     <button onClick={resta}className='buttoncount'> - </button>
     
     </div>
-    <button className='buttonAgregar' onClick={()=>addItem(contador)}>Agregar al carrito</button>
-    
+    <button className='buttonAgregar' onClick={()=>{addItem(contador); mensajeAgregado()}} >Agregar al carrito</button>
+    <ToastContainer />
     </>
     
   )
