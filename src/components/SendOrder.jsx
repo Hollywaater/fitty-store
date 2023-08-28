@@ -12,7 +12,7 @@ const SendOrder = () => {
     const [error, setError] = useState("")
     const [orden,setOrden] = useState("")
     const [compra, setCompra]= useState("")
-    const {cart, cantidadTotal}= useContext(CartContext)
+    const {cart, cantidadTotal,vaciarCarrito}= useContext(CartContext)
 
 
 
@@ -33,12 +33,16 @@ const SendOrder = () => {
                 icon: "success",
                 title: "Detalle de compra",
                 html: 
-                `<h3>${cart.item}</h3>
+                `<div>${cart.map((product)=>{
+                    `<img src=${product.item.imagen}/>`;
+                    product.item.nombre
+                })}</div>
                 <h4>Cantidad:${cantidadTotal} </h4>
                 <p>Numero de Orden: ${orderId} </p>
                 `,
                 confirmButtonText: "Cerrar",
                 })
+                return 
         })
     }
     const order = { name, email }
