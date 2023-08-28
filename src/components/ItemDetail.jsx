@@ -8,7 +8,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
   const {addItem} = useContext(CartContext)
   const manejadorCantidades = (cantidad)=>{
     setCantidad(cantidad);
-    const item = {id,nombre,precio};
+    const item = {id,nombre,precio,imagen};
     addItem(item,cantidad)
   }
 //   const addToCard =(item, cantidad)=>{

@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import SweetAlert2 from 'react-sweetalert2';
 import Swal from 'sweetalert2'
+import { CartContext } from '../contex/ShoppingCartContext';
 const SendOrder = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -10,6 +11,8 @@ const SendOrder = () => {
     const [orderId, setOrderId] = useState(null)
     const [error, setError] = useState("")
     const [orden,setOrden] = useState("")
+    const [compra, setCompra]= useState("")
+    const {cart, cantidadTotal}= useContext(CartContext)
 
 
 
@@ -26,17 +29,21 @@ const SendOrder = () => {
         }
         addDoc(orderCollecion, order).then(({ id }) => {
             setOrderId(id)
+            Swal.fire({
+                icon: "success",
+                title: "Detalle de compra",
+                html: 
+                `<h3>${cart.item}</h3>
+                <h4>Cantidad:${cantidadTotal} </h4>
+                <p>Numero de Orden: ${orderId} </p>
+                `,
+                confirmButtonText: "Cerrar",
+                })
         })
     }
     const order = { name, email }
     const orderCollecion = collection(db, "orden")
-    const mostrarOrdenCompra = ()=>{
-        setOrden(Swal.fire(
-            
-
-
-        ))
-    }
+   
     return (
 
         <>
@@ -55,9 +62,9 @@ const SendOrder = () => {
                     <input type="text" placeholder='Ingrese su numero telefonico'
                         onChange={(e) => setTel(e.target.value)} />
                     <br />
-                    <button type='submit'>Enviar info</button>
+                    <button type='submit' >Enviar info</button>
                 </form>
-                <h3>Numero de orden: {orderId} </h3>
+                {/* <h3>Numero de orden: {orderId} </h3> */}
             </div>
         </>
     )
