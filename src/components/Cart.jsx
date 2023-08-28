@@ -4,7 +4,7 @@ import { CartContext } from '../contex/ShoppingCartContext'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
- const {cart, vaciarCart,total,cantidadTotal}= useContext(CartContext)
+ const {cart, vaciarCart,total,cantidadTotal,}= useContext(CartContext)
   if (cantidadTotal === 0){
     return(
       <>
@@ -15,8 +15,7 @@ const Cart = () => {
   }
   return (
     <>
-    {cart.map(product => <CartItem key = {product.item.id} {...product}
-    imagen ={product.imagen} />)}
+    {cart.map(product => <CartItem key = {product.item.id} {...product} />)}
     <h3>Total: {total} </h3>
     <br />
     <h3>Cantidad Total: {cantidadTotal} </h3>

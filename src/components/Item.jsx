@@ -5,7 +5,6 @@ const Item = ({
     id,
     nombre,
     precio,
-    category,
     descripcion,
     imagen
 }) => {

@@ -7,10 +7,10 @@ import { Link } from 'react-router-dom'
 
 const NavBar = () => {
     return (
-        <Flex>
-            <Box p='4' bg='blue.300'>
+        <Flex className='navBar'>
+            <Box p='4'>
             <Link to = {"/"}>
-            <img src={logo} alt="" width='50px' height='50px'/>
+            <img src={logo} alt="" width='80px' height='80px'/>
             </Link>
             Fitty Store
             </Box>
@@ -29,7 +29,7 @@ const NavBar = () => {
                 </MenuList>
             </Menu>
             <Spacer />
-            <Box p='4' bg='green.300'>
+            <Box p='4'>
             <Link to={"/cart"}>
             <CardWidget/>
             </Link>

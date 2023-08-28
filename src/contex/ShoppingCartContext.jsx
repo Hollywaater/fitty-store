@@ -17,6 +17,7 @@ export const ShoppingCartProvider = ({
       }else{
         const cartAtualizado = cart.map(prod =>{
           if(prod.item.id === item.id){
+            console.log(item)
             return {...prod, cantidad: prod.cantidad + cantidad}
           }else{
             return prod

@@ -198,3 +198,40 @@
     // }).catch((error) => {
     //     console.log(error)
     // })
+    // const reset = () =>{
+  //   setContador(0)
+  // }
+  //A chequear
+
+
+// const addToCart = () => {
+
+//   setCart((currItems) => {
+
+//     const isItemFound = currItems.find((item) => item.id === id);
+
+//     if (isItemFound) {
+
+//       return currItems.map((item) => {
+
+//         if (item.id === id) {
+
+//           return { ...item, quantity: item.quantity + count };
+
+//         } else {
+
+//           return item;
+
+//         }
+
+//       });
+
+//     } else {
+
+//       return [...currItems, { id, quantity: count, price, name }];
+
+//     }
+
+//   });
+
+// };

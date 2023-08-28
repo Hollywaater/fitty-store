@@ -1,15 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { WarningIcon } from '@chakra-ui/icons'
 import { Box, Flex, Spacer } from '@chakra-ui/react'
-import carrito from '../assets/carrin.jpg'
+import carrito from '../assets/carrin.png'
+import { CartContext } from '../contex/ShoppingCartContext'
 
 const CardWidget = () => {
+  const {cantidadTotal} = useContext(CartContext)
   return (
     <Flex>
       <Box>
-        <img src={carrito} alt="" width='45px' height='45px' />
+        <img src={carrito} alt="" width='75px' height='75px' color='black'/>
+        
+        {cantidadTotal > 0 && <strong>{cantidadTotal}</strong>}
         <Spacer />
-        <h4>2</h4>
+        
       </Box>
     </Flex>
   )
