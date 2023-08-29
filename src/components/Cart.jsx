@@ -8,22 +8,34 @@ const Cart = () => {
   if (cantidadTotal === 0){
     return(
       <>
-<h2>Su carrito esta vacío</h2>
+<h2 className='msj-cart'>¡Su carrito se encuentra vacío!</h2>
+<button className='boton-return'> 
 <Link to="/">Ver Productos</Link>
+</button>
       </>
     )
   }
   return (
-    <>
+    
+    <div className='cart-style'>
+      <div className='cart-image'>
     {cart.map(product => <CartItem key = {product.item.id} {...product} />)}
-    <h3>Total: {total} </h3>
+    </div>
+    <div className='content-cart'>
+    <h3 className='canti-cart'>Total: ${total} </h3>
     <br />
     <h3>Cantidad Total: {cantidadTotal} </h3>
     <br />
-    <button onClick={()=> vaciarCart()}>Vaciar Carrito de compras</button>
+    </div>
+    <button onClick={()=> vaciarCart()} className='vaciar-cart'>Vaciar Carrito de compras</button>
     <br />
-    <Link to="/SendOrder">FINALIZAR</Link>
-    </>
+    <div className='fin-cart'>
+    <button>
+    <Link to="/SendOrder">Finalizar Compra</Link>
+    </button>
+    </div>
+    </div>
+    
   )
 }
 

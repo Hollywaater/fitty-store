@@ -8,9 +8,9 @@ const ItemList = ({ productos }) => {
       
         {productos.map((produ)=>{
             return(
-                <div className='card'>
+                <div className='card'   key={produ.id}>
                 <Item
-                key={produ.id}
+              
                 id ={produ.id}
                 nombre = {produ.nombre}
                 precio = {produ.precio}

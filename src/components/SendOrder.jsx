@@ -2,7 +2,9 @@ import React, { useContext, useState } from 'react'
 import { getFirestore, collection, addDoc } from 'firebase/firestore'
 import SweetAlert2 from 'react-sweetalert2';
 import Swal from 'sweetalert2'
+import { Center } from '@chakra-ui/react';
 import { CartContext } from '../contex/ShoppingCartContext';
+import { Link } from 'react-router-dom';
 const SendOrder = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -27,6 +29,7 @@ const SendOrder = () => {
             setError(Swal.fire("Los campos de mail no coinciden","",'error'))
             return;
         }
+        
         addDoc(orderCollecion, order).then(({ id }) => {
             setOrderId(id)
             Swal.fire({
@@ -41,7 +44,9 @@ const SendOrder = () => {
                 })}</div>
                 <h3>Cantidad total:${cantidadTotal} </h3>
                 <p>Numero de Orden: ${id} </p>
+                <Link to={"/"}><button> Cerrar</button></Link>
                 `,
+                
                 confirmButtonText: "Cerrar",
             }).then((result) => {
                 if (result.isConfirmed) {
@@ -59,8 +64,8 @@ const SendOrder = () => {
 
         <>
             <div>
-                <h1>Estas por finalizar tu compra te pedimos que completes los siguientes datos:</h1>
-                <form onSubmit={handleSubmit}>
+                <h3 className='title-form'>Estas por finalizar tu compra, te pedimos a continuación que completes los siguientes datos:</h3>
+                <form onSubmit={handleSubmit} className='form-conteiner'>
                     <input type="text" placeholder='Ingrese su Nombre y apellido'
                         onChange={(e) => setName(e.target.value)} />
                     <br />
@@ -73,10 +78,13 @@ const SendOrder = () => {
                     <input type="text" placeholder='Ingrese su numero telefonico'
                         onChange={(e) => setTel(e.target.value)} />
                     <br />
-                    <button type='submit'>Enviar info</button>
+                    <Center>
+                    <button type='submit' className='send-info'>Enviar info</button>
+                    </Center>
                 </form>
                 {/* <h3>Numero de orden: {orderId} </h3> */}
             </div>
+            
         </>
     )
 }

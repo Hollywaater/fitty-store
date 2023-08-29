@@ -4,10 +4,10 @@ import ItemListConteiner from './ItemListConteiner'
 const Home = () => {
   return (
     <>
-    <div className='home'>
-    Bienvenidos a la mejor tienda de estetica vehicular
+    
+    <h1 className='home'>¡Bienvenidos a la mejor tienda de estetica vehicular!</h1>
     <ItemListConteiner/>
-    </div>
+    
     </>
     
     )
