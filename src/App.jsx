@@ -29,7 +29,7 @@ function App() {
     <BrowserRouter>
       <ShoppingCartProvider>
         <NavBar />
-
+        
         <Routes>
           <Route exact path='/' element={<Home />} />
           <Route exact path='/cart' element={<Cart />} />

@@ -26,7 +26,9 @@ getDocs(misProductos).then( res =>{
 
   return (
     <>
+    <div className='itemList'>
     <ItemList productos={product}/>
+    </div>
       {/* <ItemList productos={filtradoProductos} />  */}
       {/* <h1>producto :{product.name} </h1> */}
     {/* <ItemList productos={product} />  */}

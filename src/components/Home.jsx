@@ -4,9 +4,12 @@ import ItemListConteiner from './ItemListConteiner'
 const Home = () => {
   return (
     <>
-    <div>Bienvenidos a la mejor tienda de estetica vehicular</div>
+    <div className='home'>
+    Bienvenidos a la mejor tienda de estetica vehicular
     <ItemListConteiner/>
+    </div>
     </>
+    
     )
 }
 

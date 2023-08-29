@@ -1,7 +1,8 @@
 import React, { useContext, useState } from 'react'
-import { Image, Stack, Heading, Text, CardBody, Divider, Card } from '@chakra-ui/react'
+import { Image, Stack, Heading, Text, CardBody, Divider, Card,Center } from '@chakra-ui/react'
 import ItemCount from './ItemCount'
 import { CartContext } from '../contex/ShoppingCartContext'
+
 
 const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
   const [cantidad, setCantidad]= useState(0)
@@ -11,27 +12,14 @@ const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
     const item = {id,nombre,precio,imagen};
     addItem(item,cantidad)
   }
-//   const addToCard =(item, cantidad)=>{
-//   setCart((elmentSelect)=>{
-//     console.log("entro")
-//     const isItemFound = elmentSelect.find((item)=> item.id === id);
-//     if(isItemFound){
-//       return elmentSelect.map((item)=>{
-//         if (item.id === id){
-//           return{...item, cantidad: item.cantidad + count}
-//         }else{
-//           return item;
-//         }
-//       })
-//     }else{
-//       return[...elmentSelect,{id, cantidad:count, precio, nombre}]
-//     }
-//   })
-//  }
+
   return (
-    <Card maxW='sm'>
+    <Center>
+    <Card maxW='sm' className='detailConteiner'>
       <CardBody>
+        <Center>
         <Image src={imagen} />
+        </Center>
         <Stack mt='6' spacing='3'>
           <Heading size='md'>{nombre} </Heading>
           <Text>
@@ -45,6 +33,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
       <Divider />
       <ItemCount addItem={manejadorCantidades} />
     </Card>
+    </Center>
   )
 }
 

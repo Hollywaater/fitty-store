@@ -12,7 +12,7 @@ const SendOrder = () => {
     const [error, setError] = useState("")
     const [orden,setOrden] = useState("")
     const [compra, setCompra]= useState("")
-    const {cart, cantidadTotal,vaciarCarrito}= useContext(CartContext)
+    const {cart, cantidadTotal,vaciarCart}= useContext(CartContext)
 
 
 
@@ -34,14 +34,21 @@ const SendOrder = () => {
                 title: "Detalle de compra",
                 html: 
                 `<div>${cart.map((product)=>{
-                    `<img src=${product.item.imagen}/>`;
-                    product.item.nombre
+                    return `<img src='${product.item.imagen}'/>
+                    <h4>${product.item.nombre}</h4>
+                    <p>Cantidad: ${product.cantidad} </p>
+                    `;
                 })}</div>
-                <h4>Cantidad:${cantidadTotal} </h4>
-                <p>Numero de Orden: ${orderId} </p>
+                <h3>Cantidad total:${cantidadTotal} </h3>
+                <p>Numero de Orden: ${id} </p>
                 `,
                 confirmButtonText: "Cerrar",
-                })
+            }).then((result) => {
+                if (result.isConfirmed) {
+                  vaciarCart();
+                }
+              })
+
                 return 
         })
     }
@@ -66,7 +73,7 @@ const SendOrder = () => {
                     <input type="text" placeholder='Ingrese su numero telefonico'
                         onChange={(e) => setTel(e.target.value)} />
                     <br />
-                    <button type='submit' >Enviar info</button>
+                    <button type='submit'>Enviar info</button>
                 </form>
                 {/* <h3>Numero de orden: {orderId} </h3> */}
             </div>
