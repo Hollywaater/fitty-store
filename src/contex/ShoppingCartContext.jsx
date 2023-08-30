@@ -7,7 +7,6 @@ export const ShoppingCartProvider = ({
     const [cart, setCart] = useState([])
     const [total,setTotal]= useState(0)
     const [cantidadTotal, setCantidadTotal]= useState(0);
-    console.log(cart)
     const addItem =(item, cantidad) =>{
       const productoExistente = cart.find(prod=> prod.item.id === item.id) ;
       if(!productoExistente){

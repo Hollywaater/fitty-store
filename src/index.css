@@ -85,6 +85,7 @@ padding: 5px;
   grid-template-columns: repeat(3, 1fr);
   gap:  55px;
   margin-left: 210px;
+  height: 1550px;
 
 }
 .card{
@@ -164,9 +165,12 @@ padding: 5px;
   padding: 10px;
   border-radius: 15px;
 }
+.return-container{
+  height: 790px;
+}
 .msj-cart{
   font-size: xx-large;
-  color: brown;
+  color: azure;
   
 }
 .vaciar-cart{

@@ -10,12 +10,10 @@ const ItemDetailConteiner = () => {
     useEffect (()=>{
         
         const nuevoDoc = doc(db,"PRODUCTOS",`${id}`)
-        console.log(nuevoDoc)
         getDoc(nuevoDoc).then(res => {
             const data = res.data();
             const nuevoProduct = {id:res.id, ...data}
             setProducto(nuevoProduct)
-            console.log(nuevoProduct)
         }).catch(error => console.log(error))
     },[id])
     return (

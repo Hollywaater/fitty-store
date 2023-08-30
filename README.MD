@@ -69,7 +69,7 @@ const misProductos = category ? query(collection(db,"PRODUCTOS"),where("categori
 **El componente ItemList recibe como props a productos y realiza un map para la visualización de cada uno en el Item, El cual recibe cada una de las propiedades y las muestra en una card importada de Chakra UI**
 - Lógica carrito de compras:
 **La lógica del carrito de compras se encuentra en la carpeta contex donde encontraremos al ShoppingCartContex el cual contiene las funcionalidades básicas del carrito, como añadir un producto, eliminarlo y vaciar el carrito de compras**
---Agregar productos al carrito de compras:
+-Agregar productos al carrito de compras:
 ```javascript
  const addItem =(item, cantidad) =>{
       const productoExistente = cart.find(prod=> prod.item.id === item.id) ;
@@ -93,7 +93,7 @@ const misProductos = category ? query(collection(db,"PRODUCTOS"),where("categori
     }
 ```
 ***La función se encarga de agregar el producto seleccionado y su cantidad***
---Eliminar producto del carrito de compras:
+-Eliminar producto del carrito de compras:
 ```javascript
  const eliminarProdu = (id)=>{
       const produEliminado = cart.find(prod => prod.item.id === id)
@@ -103,7 +103,7 @@ const misProductos = category ? query(collection(db,"PRODUCTOS"),where("categori
       setTotal(prev => prev - produEliminado.item.precio * produEliminado.cantidad);
     }
 ```
---Vaciar Carrito de compras:
+-Vaciar Carrito de compras:
 ```javascript
 const vaciarCart = ()=>{
   setCart([]);
