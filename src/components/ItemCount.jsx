@@ -42,9 +42,10 @@ const mensajeAgregado = ()=>{
     <>
     <div className="contador">
     
-    <button onClick={sumar} className='buttoncount'> + </button>
+    <button onClick={resta}className='buttoncounts'> - </button>
     <p className='result'>{contador}</p>
-    <button onClick={resta}className='buttoncount'> - </button>
+  
+    <button onClick={sumar} className='buttoncount'> + </button>
     
     </div>
     <button className='buttonAgregar' onClick={()=>{addItem(contador); mensajeAgregado()}} >Agregar al carrito</button>

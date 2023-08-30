@@ -3,7 +3,7 @@ import ItemList from './ItemList'
 import { useParams } from 'react-router-dom'
 import { getFirestore, query } from 'firebase/firestore'
 import { collection,getDocs,where } from 'firebase/firestore'
-//import { db } from './config'
+
 const ItemListConteiner = () => {
   const [product, setProduct]= useState([])
   const {category} = useParams()
@@ -21,17 +21,12 @@ getDocs(misProductos).then( res =>{
   console.log(nuevosProducts)
 }).catch(error => console.log(error))
 },[category])
-//console.log(nuevoProduct)
-//const filtradoProductos = product.filter((produ)=>produ.category === category)
 
   return (
     <>
     <div className='itemList'>
     <ItemList productos={product}/>
     </div>
-      {/* <ItemList productos={filtradoProductos} />  */}
-      {/* <h1>producto :{product.name} </h1> */}
-    {/* <ItemList productos={product} />  */}
     </>
   )
 }

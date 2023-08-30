@@ -38,7 +38,7 @@ const Item = ({
                     
                         <Button variant='solid' colorScheme='blue'>
                             <Link to = {`/item/${id}`} >
-                            Detail
+                            Detalle
                             </Link>
                         </Button>
                 </CardFooter>

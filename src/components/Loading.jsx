@@ -4,7 +4,7 @@ import { Spinner } from '@chakra-ui/react'
 
 const Loading = () => {
     return (
-        <div>Cargando Tienda Online...
+        <div className='loading'>Cargando Tienda Online...
             <Spinner
                 thickness='4px'
                 speed='0.65s'

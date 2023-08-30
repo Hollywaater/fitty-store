@@ -14,8 +14,9 @@ const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
   }
 
   return (
+    <div className='detailConteiner'>
     <Center>
-    <Card maxW='sm' className='detailConteiner'>
+    <Card maxW='sm' >
       <CardBody>
         <Center>
         <Image src={imagen} />
@@ -34,6 +35,7 @@ const ItemDetail = ({ id, nombre, precio, descripcion,imagen}) => {
       <ItemCount addItem={manejadorCantidades} />
     </Card>
     </Center>
+    </div>
   )
 }
 

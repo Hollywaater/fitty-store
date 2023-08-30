@@ -19,6 +19,11 @@ const SendOrder = () => {
     const navigate = useNavigate();
 
 
+    let fecha = new Date();
+    let formatoFecha = {day: "numeric", month: "numeric", year:"numeric"}
+    let fechaFormateada = fecha.toLocaleDateString("es-ES",formatoFecha);
+
+
 
 
     const db = getFirestore()
@@ -46,7 +51,9 @@ const SendOrder = () => {
                 html:
                     `<div>${cart.map((product) => {
                         return `
-                        <img src='${product.item.imagen}'/>
+                        <div class="image-container">
+                            <img src='${product.item.imagen}'/>
+                        </div>
                     <br />
                     <h4>${product.item.nombre}</h4>
                     <p>Cantidad: ${product.cantidad} </p>
@@ -56,6 +63,7 @@ const SendOrder = () => {
                 <p>Precio Total: $${total} </p>
                 <h3>Cantidad total de productos: ${cantidadTotal} </h3>
                 <p>Numero de Orden: ${id} </p>
+                <p>Fecha de compra: ${fechaFormateada} </p>
                 <br />
                 <br />
                 <p>En breves nos comunicaremos con usted,</p>
@@ -80,7 +88,7 @@ const SendOrder = () => {
     return (
 
         <>
-            <div>
+            <div className='ornden'>
                 <h3 className='title-form'>Estas por finalizar tu compra, te pedimos a continuación que completes los siguientes datos:</h3>
                 <form onSubmit={handleSubmit} className='form-conteiner'>
                     <input type="text" placeholder='Ingrese su Nombre y apellido'
