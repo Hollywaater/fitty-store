@@ -20,7 +20,7 @@ Este es un proyecto de ecommerce básico que se utiliza para el curso de React. 
 - npm run dev
 
 
-***Para instalar y ejecutar la aplicación en tu máquina local, sigue los siguientes pasos:***
+## Para instalar y ejecutar la aplicación en tu máquina local, sigue los siguientes pasos:
 1- Clona el repositorio a tu máquina local.
 2- Abre una terminal en el directorio del proyecto.
 3- Ejecuta el comando npm install para instalar las dependencias.
