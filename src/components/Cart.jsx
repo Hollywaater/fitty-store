@@ -24,7 +24,7 @@ const Cart = () => {
     <div className='content-cart'>
     <h3 className='canti-cart'>Total: ${total} </h3>
     <br />
-    <h3>Cantidad Total: {cantidadTotal} </h3>
+    <h3>Cantidad Total de productos: {cantidadTotal} </h3>
     <br />
     </div>
     <button onClick={()=> vaciarCart()} className='vaciar-cart'>Vaciar Carrito de compras</button>

@@ -42,6 +42,17 @@ justify-content: space-around;
 .navBar{
   background-color: black;
 }
+.box{
+  font-size:20px;
+  color: azure;
+  align-items: center;
+  
+  
+}
+.cantidades{
+ font-size: small;
+  color: azure;
+}
 .home{
 font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;  
 font-size: 75px;
@@ -56,12 +67,14 @@ padding: 5px;
 .card-conteiner{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap:  15px;
+  gap:  55px;
+  margin-left: 210px;
 
 }
 .card{
   margin: 0;
-  height: 620px;
+  height: 470px;
+  width: 250px;
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -79,6 +92,7 @@ padding: 5px;
   flex-direction: column;
   align-items: center;
   background-color: azure;
+  
  ;
 
   
@@ -87,7 +101,7 @@ padding: 5px;
   font-size: 25px;
   color: azure;
   background-color: black;
-  border-radius: 15%;
+  border-radius: 2%;
   display: flex;
   flex-direction: column-reverse;
   margin: 5px;
@@ -185,4 +199,9 @@ padding: 5px;
   border-radius: 15px;
   width: 200px;
   
+}
+.imgcart{
+width: 100%;
+height: auto; 
+background-color: black;
 }

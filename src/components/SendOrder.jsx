@@ -5,6 +5,7 @@ import Swal from 'sweetalert2'
 import { Center } from '@chakra-ui/react';
 import { CartContext } from '../contex/ShoppingCartContext';
 import { Link } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 const SendOrder = () => {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
@@ -12,9 +13,11 @@ const SendOrder = () => {
     const [emailConfirmation, setEmailConfirmation] = useState("")
     const [orderId, setOrderId] = useState(null)
     const [error, setError] = useState("")
-    const [orden,setOrden] = useState("")
-    const [compra, setCompra]= useState("")
-    const {cart, cantidadTotal,vaciarCart}= useContext(CartContext)
+    const [orden, setOrden] = useState("")
+    const [compra, setCompra] = useState("")
+    const { cart, cantidadTotal, vaciarCart, total } = useContext(CartContext)
+    const navigate = useNavigate();
+
 
 
 
@@ -22,44 +25,58 @@ const SendOrder = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (!name || !email || !tel || !emailConfirmation) {
-            setError(Swal.fire("Por favor, complete todos los campos","",'error'))
+            setError(Swal.fire("Por favor, complete todos los campos", "", 'error'))
             return;
         }
-        if(email !== emailConfirmation){
-            setError(Swal.fire("Los campos de mail no coinciden","",'error'))
+        if (email !== emailConfirmation) {
+            setError(Swal.fire("Los campos de mail no coinciden", "", 'error'))
             return;
         }
-        
+        if (isNaN(tel)){
+            setError(Swal.fire("Usted no ingreso un número telefónico","",'error'))
+            return;
+        }
+
         addDoc(orderCollecion, order).then(({ id }) => {
             setOrderId(id)
             Swal.fire({
+                
                 icon: "success",
                 title: "Detalle de compra",
-                html: 
-                `<div>${cart.map((product)=>{
-                    return `<img src='${product.item.imagen}'/>
+                html:
+                    `<div>${cart.map((product) => {
+                        return `
+                        <img src='${product.item.imagen}'/>
+                    <br />
                     <h4>${product.item.nombre}</h4>
                     <p>Cantidad: ${product.cantidad} </p>
-                    `;
-                })}</div>
-                <h3>Cantidad total:${cantidadTotal} </h3>
+                    <br />
+                    `
+                    })}</div>
+                <p>Precio Total: $${total} </p>
+                <h3>Cantidad total de productos: ${cantidadTotal} </h3>
                 <p>Numero de Orden: ${id} </p>
-                <Link to={"/"}><button> Cerrar</button></Link>
-                `,
+                <br />
+                <br />
+                <p>En breves nos comunicaremos con usted,</p>
+                <p>¡MUCHAS GRACIAS POR SU COMPRA!</p>
                 
-                confirmButtonText: "Cerrar",
+                `,
+                buttonText: navigate("/"),
             }).then((result) => {
                 if (result.isConfirmed) {
-                  vaciarCart();
-                }
-              })
+                    vaciarCart();
+                    ;
 
-                return 
+                }
+            })
+
+            return
         })
     }
     const order = { name, email }
     const orderCollecion = collection(db, "orden")
-   
+
     return (
 
         <>
@@ -79,12 +96,11 @@ const SendOrder = () => {
                         onChange={(e) => setTel(e.target.value)} />
                     <br />
                     <Center>
-                    <button type='submit' className='send-info'>Enviar info</button>
+                        <button type='submit' className='send-info'>Enviar info</button>
                     </Center>
                 </form>
-                {/* <h3>Numero de orden: {orderId} </h3> */}
             </div>
-            
+
         </>
     )
 }

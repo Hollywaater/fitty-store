@@ -8,7 +8,7 @@ import { Link } from 'react-router-dom'
 const NavBar = () => {
     return (
         <Flex className='navBar'>
-            <Box p='4'>
+            <Box p='4' className='box'>
             <Link to = {"/"}>
             <img src={logo} alt="" width='80px' height='80px'/>
             </Link>

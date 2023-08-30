@@ -11,7 +11,7 @@ const CardWidget = () => {
       <Box>
         <img src={carrito} alt="" width='75px' height='75px' color='black'/>
         
-        {cantidadTotal > 0 && <strong>{cantidadTotal}</strong>}
+        {cantidadTotal > 0 && <strong className='cantidades'>{cantidadTotal}</strong>}
         <Spacer />
         
       </Box>
