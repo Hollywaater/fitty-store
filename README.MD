@@ -8,6 +8,10 @@ Este es un proyecto de ecommerce básico que se utiliza para el curso de React. 
 - React Router
 - Firebase
 
+## Librerias utilizadas
+- Chakra Ui
+- Tostify
+- Sweet alert2
 
 ## Instalación
 - Npm init vite@latest
@@ -152,7 +156,7 @@ const {cart, vaciarCart,total,cantidadTotal,}= useContext(CartContext)
             setOrderId(id)
             Swal.fire
 ```
-**Utilizo UseState para definir los estados y poder hacer las validaciones correspondientes, de tal manera que el usuario coloque los datos de forma correcta, utilizamos la base da datos para generar un numero de orden de la compra**
+**Utilizo UseState para definir los estados y poder hacer las validaciones correspondientes, de tal manera que el usuario coloque los datos de forma correcta, utilizamos la base da datos para generar un numero de orden de la compra, que visualizara a traves de un alerta de la libreria SweetAlert2**
 - Interfaz de usuario:
 ```javascript
 <BrowserRouter>
