@@ -1,9 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../contex/ShoppingCartContext';
-import ShoppingCartProvider from '../contex/ShoppingCartContext';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-// import { useState } from 'react'
+
 
 const ItemCount = ({addItem}) => {
 useContext(CartContext)

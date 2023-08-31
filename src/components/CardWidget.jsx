@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import { WarningIcon } from '@chakra-ui/icons'
 import { Box, Flex, Spacer } from '@chakra-ui/react'
 import carrito from '../assets/carrin.png'
 import { CartContext } from '../contex/ShoppingCartContext'

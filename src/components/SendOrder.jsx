@@ -4,7 +4,6 @@ import SweetAlert2 from 'react-sweetalert2';
 import Swal from 'sweetalert2'
 import { Center } from '@chakra-ui/react';
 import { CartContext } from '../contex/ShoppingCartContext';
-import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 const SendOrder = () => {
     const [name, setName] = useState("")
@@ -82,7 +81,7 @@ const SendOrder = () => {
             return
         })
     }
-    const order = { name, email }
+    const order = { name, email, tel, cart  }
     const orderCollecion = collection(db, "orden")
 
     return (
