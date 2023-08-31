@@ -10,7 +10,7 @@ Este es un proyecto de ecommerce básico que se utiliza para el curso de React. 
 
 ## Librerias utilizadas
 - Chakra Ui
-- Tostify
+- react-toastify
 - Sweet alert2
 
 ## Instalación
